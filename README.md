@@ -1,4 +1,4 @@
-# <img width="1500" height="100" alt="image" src="https://github.com/user-attachments/assets/615fab9e-c792-4cd0-b8cb-14759d8c264d" />
+# <img width="2000" height="500" alt="image" src="https://github.com/user-attachments/assets/615fab9e-c792-4cd0-b8cb-14759d8c264d" />
 
 ### Deploying Dataiku DSS on macOS Using Docker Desktop
 
@@ -36,6 +36,10 @@ Open Terminal on your MacBook.
 Run the following command to pull the Dataiku DSS image and start the container:
 
 ```bash
+# Use this if you are running Mac - Apple Silicon (M2,M3,M4 Chip)
+docker run -d --platform=linux/amd64 -p 10000:10000 dataiku/dss
+
+# Use the following command if you are running Mac - Intel Chip
 docker run -d -p 10000:10000 dataiku/dss
 ```
 
@@ -47,10 +51,10 @@ docker run -d -p 10000:10000 dataiku/dss
 
 - dataiku/dss is the official Dataiku DSS Docker image
 
-- Confirm the container is running in your terminal:
+Run the following command in the terminal to confirm that the dataiku container is running:
 
 ```bash
-docker ps
+ docker ps | grep dataiku
 ```
 ## Step 3: Access the Dataiku DSS Web Interface
 
